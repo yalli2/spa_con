@@ -601,8 +601,8 @@
     skills: D.skills,
     sections: D.sections,
     people: {
-      Chico: { name: 'Chico', av: '👦🏻', side: 'l' }, Bianca: { av: '👱🏼‍♀️', side: 'r' },
-      Enrique: { av: '👨🏽', side: 'l' }, Sumi: { av: '👩🏻', side: 'r' }, A: { av: '🙋', side: 'l' }, B: { av: '🧑‍🏫', side: 'r' }, x: { name: '정답', av: '📢', side: 'l' }
+      Chico: { g: 'm', name: 'Chico', av: '👦🏻', side: 'l' }, Bianca: { g: 'f', av: '👱🏼‍♀️', side: 'r' },
+      Enrique: { g: 'm', av: '👨🏽', side: 'l' }, Sumi: { g: 'f', av: '👩🏻', side: 'r' }, A: { av: '🙋', side: 'l' }, B: { av: '🧑‍🏫', side: 'r' }, x: { name: '정답', av: '📢', side: 'l' }
     },
     errLabels: { conjugacion: '동사 변화 (ser · hablar)', concordancia: '성 · 수 일치 (국적 · 색깔)', estructura: '문장 구조 · 어순' },
     errTips: {

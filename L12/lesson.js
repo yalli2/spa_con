@@ -566,8 +566,8 @@
     skills: D.skills,
     sections: D.sections,
     people: {
-      E: { name: 'Estudiante', av: '👧🏼', side: 'l' }, P: { name: 'Profesor', av: '👨🏻‍🏫', side: 'r' },
-      Chica: { av: '👧🏻', side: 'r' }, Abuelo: { av: '👴🏻', side: 'l' }
+      E: { g: 'f', name: 'Estudiante', av: '👧🏼', side: 'l' }, P: { g: 'm', name: 'Profesor', av: '👨🏻‍🏫', side: 'r' },
+      Chica: { g: 'f', av: '👧🏻', side: 'r' }, Abuelo: { g: 'm', av: '👴🏻', side: 'l' }
     },
     errLabels: { conjugacion: '동사 변화 (불완료과거)', estructura: '문장 구조 · 전치사' },
     errTips: {

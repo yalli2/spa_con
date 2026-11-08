@@ -747,8 +747,8 @@
     skills: D.skills,
     sections: D.sections,
     people: {
-      A: { name: 'Conductora', av: '👩🏼‍🦰', side: 'l' }, B: { name: 'Chica', av: '👩🏽', side: 'r' },
-      Ana: { av: '👩🏼', side: 'l' }, Pablo: { av: '🧑🏽', side: 'r' }
+      A: { g: 'f', name: 'Conductora', av: '👩🏼‍🦰', side: 'l' }, B: { g: 'f', name: 'Chica', av: '👩🏽', side: 'r' },
+      Ana: { g: 'f', av: '👩🏼', side: 'l' }, Pablo: { g: 'm', av: '🧑🏽', side: 'r' }
     },
     errLabels: { estructura: 'hay / está · 전치사', conjugacion: '명령형 (tú / usted)', concordancia: '관사 · 성·수 일치' },
     errTips: {

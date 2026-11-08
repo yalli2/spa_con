@@ -691,8 +691,8 @@
     skills: D.skills,
     sections: D.sections,
     people: {
-      'Rocío': { av: '👩🏻‍🦰', side: 'l' }, Roberto: { av: '🧑🏻', side: 'r' },
-      Paula: { av: '👱🏼‍♀️', side: 'r' }, 'Óscar': { av: '🧑🏽', side: 'l' }
+      'Rocío': { g: 'f', av: '👩🏻‍🦰', side: 'l' }, Roberto: { g: 'm', av: '🧑🏻', side: 'r' },
+      Paula: { g: 'f', av: '👱🏼‍♀️', side: 'r' }, 'Óscar': { g: 'm', av: '🧑🏽', side: 'l' }
     },
     errLabels: { concordancia: 'Es la una / Son las … 일치', pronombre: '재귀대명사 me·te·se·nos·os', conjugacion: '동사 변화 (o→ue, e→ie, -go)' },
     errTips: {

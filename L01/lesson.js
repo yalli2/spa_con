@@ -602,7 +602,7 @@
     skills: D.skills,
     sections: D.sections,
     people: {
-      J: { name: 'Juan', av: '🧑🏼', side: 'l' }, C: { name: 'Cristina', av: '👩🏻‍🦰', side: 'r' }, F: { name: 'Felipe', av: '👨🏽‍🦱', side: 'l' },
+      J: { g: 'm', name: 'Juan', av: '🧑🏼', side: 'l' }, C: { g: 'f', name: 'Cristina', av: '👩🏻‍🦰', side: 'r' }, F: { g: 'm', name: 'Felipe', av: '👨🏽‍🦱', side: 'l' },
       A: { av: '🧑', side: 'l' }, B: { av: '🧒', side: 'r' }
     },
     errLabels: { conjugacion: '동사 변화 (llamarse · ser · estar)', concordancia: '성·수 일치 (buenos/buenas · este/esta)', pronombre: 'tú / usted · tu / su · me / te / se' },

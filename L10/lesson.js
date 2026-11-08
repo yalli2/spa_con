@@ -730,8 +730,8 @@
     skills: D.skills,
     sections: D.sections,
     people: {
-      Manolo: { av: '🧑🏻', side: 'l' }, Estela: { av: '👧🏻', side: 'r' },
-      Madre: { av: '👩🏻', side: 'l' }, Miguel: { av: '🧑🏽', side: 'r' }, N: { name: 'Audio', av: '🎧', side: 'l' }
+      Manolo: { g: 'm', av: '🧑🏻', side: 'l' }, Estela: { g: 'f', av: '👧🏻', side: 'r' },
+      Madre: { g: 'f', av: '👩🏻', side: 'l' }, Miguel: { g: 'm', av: '🧑🏽', side: 'r' }, N: { name: 'Audio', av: '🎧', side: 'l' }
     },
     errLabels: { concordancia: '성·수 일치 (duele·duelen / 관사)', conjugacion: 'haber 변화 (he · has · ha …)', participio: '과거분사 (hecho · visto …)', adverbio: 'ya / todavía / nunca' },
     errTips: {

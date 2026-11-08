@@ -563,8 +563,8 @@
     skills: D.skills,
     sections: D.sections,
     people: {
-      J: { name: 'Juan', av: '🧑🏻‍🦱', side: 'l' }, C: { name: 'Cristina', av: '👩🏼‍🦰', side: 'r' },
-      'María': { av: '👱🏼‍♀️', side: 'r' }, Pedro: { av: '🧑🏽', side: 'l' }, Marcos: { av: '👦🏻', side: 'l' }, Adriana: { av: '👧🏽', side: 'r' }
+      J: { g: 'm', name: 'Juan', av: '🧑🏻‍🦱', side: 'l' }, C: { g: 'f', name: 'Cristina', av: '👩🏼‍🦰', side: 'r' },
+      'María': { g: 'f', av: '👱🏼‍♀️', side: 'r' }, Pedro: { g: 'm', av: '🧑🏽', side: 'l' }, Marcos: { g: 'm', av: '👦🏻', side: 'l' }, Adriana: { g: 'f', av: '👧🏽', side: 'r' }
     },
     errLabels: { concordancia: 'gusta / gustan 일치', pronombre: '대명사 me·te·le·nos·os·les', conjugacion: '동사 변화 (preferir)' },
     errTips: {

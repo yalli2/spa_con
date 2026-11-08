@@ -630,8 +630,8 @@
     skills: D.skills,
     sections: D.sections,
     people: {
-      'Él': { av: '👨🏻‍⚕️', side: 'l' }, Ella: { av: '👩🏼‍🎨', side: 'r' },
-      Juan: { av: '🧑🏻', side: 'l' }, Cristina: { av: '👩🏽‍🦱', side: 'r' },
+      'Él': { g: 'm', av: '👨🏻‍⚕️', side: 'l' }, Ella: { g: 'f', av: '👩🏼‍🎨', side: 'r' },
+      Juan: { g: 'm', av: '🧑🏻', side: 'l' }, Cristina: { g: 'f', av: '👩🏽‍🦱', side: 'r' },
       A: { av: '🧑🏻‍🎓', side: 'l' }, B: { av: '👩🏽‍⚕️', side: 'r' }
     },
     errLabels: { interrogativo: '의문사 (qué · dónde · cómo)', concordancia: '성 · 수 일치 (médico/médica)', conjugacion: '동사 변화 (현재형)' },

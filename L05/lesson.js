@@ -731,8 +731,8 @@
     skills: D.skills,
     sections: D.sections,
     people: {
-      S: { name: 'La dueña', av: '👩🏽‍🦱', side: 'l' }, C: { name: 'Chico coreano', av: '🧑🏻‍🎓', side: 'r' },
-      Ana: { av: '👩🏼‍🦰', side: 'l' }, Minsu: { av: '🧑🏻', side: 'r' }, Julio: { av: '🧔🏻', side: 'l' }, Marta: { av: '👩🏻', side: 'r' }
+      S: { g: 'f', name: 'La dueña', av: '👩🏽‍🦱', side: 'l' }, C: { g: 'm', name: 'Chico coreano', av: '🧑🏻‍🎓', side: 'r' },
+      Ana: { g: 'f', av: '👩🏼‍🦰', side: 'l' }, Minsu: { g: 'm', av: '🧑🏻', side: 'r' }, Julio: { g: 'm', av: '🧔🏻', side: 'l' }, Marta: { g: 'f', av: '👩🏻', side: 'r' }
     },
     errLabels: { conjugacion: 'ser · estar · tener · hay', concordancia: '성 · 수 일치 (pequeño/pequeña)', estructura: '위치 표현 · muy/mucho' },
     errTips: {

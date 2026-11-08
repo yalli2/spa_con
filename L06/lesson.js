@@ -612,9 +612,9 @@
     skills: D.skills,
     sections: D.sections,
     people: {
-      S: { name: 'Señorita', av: '👩🏼‍🦰', side: 'l' }, C: { name: 'Chico', av: '🧑🏻‍🦱', side: 'r' },
-      Dependiente: { av: '👨🏻‍💼', side: 'l' }, Clienta: { av: '👩🏽', side: 'r' },
-      Dependienta: { av: '👩🏻‍💼', side: 'l' }, Cliente: { av: '🧔🏻', side: 'r' }
+      S: { g: 'f', name: 'Señorita', av: '👩🏼‍🦰', side: 'l' }, C: { g: 'm', name: 'Chico', av: '🧑🏻‍🦱', side: 'r' },
+      Dependiente: { g: 'm', av: '👨🏻‍💼', side: 'l' }, Clienta: { g: 'f', av: '👩🏽', side: 'r' },
+      Dependienta: { g: 'f', av: '👩🏻‍💼', side: 'l' }, Cliente: { g: 'm', av: '🧔🏻', side: 'r' }
     },
     errLabels: { hayestar: 'hay / estar 구분', preposicion: '위치 전치사 · del', demostrativo: '지시사 성·수' },
     errTips: {

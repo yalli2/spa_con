@@ -612,9 +612,9 @@
     skills: D.skills,
     sections: D.sections,
     people: {
-      M: { name: 'Manuel', av: '🧑🏻‍🦰', side: 'l' }, B: { name: 'Beatriz', av: '👩🏼‍🦰', side: 'r' },
-      Ana: { av: '👱🏼‍♀️', side: 'r' }, Juan: { av: '🧑🏽', side: 'l' },
-      A: { av: '🙋🏻‍♂️', side: 'l' }, B2: { name: 'B', av: '🙋🏽‍♀️', side: 'r' }, Amigo: { av: '🧑🏻', side: 'l' }, Marta: { av: '👩🏽', side: 'r' }
+      M: { g: 'm', name: 'Manuel', av: '🧑🏻‍🦰', side: 'l' }, B: { g: 'f', name: 'Beatriz', av: '👩🏼‍🦰', side: 'r' },
+      Ana: { g: 'f', av: '👱🏼‍♀️', side: 'r' }, Juan: { g: 'm', av: '🧑🏽', side: 'l' },
+      A: { av: '🙋🏻‍♂️', side: 'l' }, B2: { name: 'B', av: '🙋🏽‍♀️', side: 'r' }, Amigo: { g: 'm', av: '🧑🏻', side: 'l' }, Marta: { g: 'f', av: '👩🏽', side: 'r' }
     },
     errLabels: { irregular: '불규칙 과거 (ir · hacer · llegar)', conjugacion: '과거형 어미 변화' },
     errTips: {

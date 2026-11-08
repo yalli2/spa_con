@@ -56,9 +56,28 @@
     } catch (e) { }
   }
   if (TTS_OK) { pickVoice(); speechSynthesis.addEventListener ? speechSynthesis.addEventListener('voiceschanged', pickVoice) : (speechSynthesis.onvoiceschanged = pickVoice); setTimeout(pickVoice, 500); setTimeout(pickVoice, 2000); }
-  function utter(t, pitch) {
+  /* 남녀 목소리 구분 — 음성 이름으로 성별 추정 (브라우저·OS마다 다름) */
+  const F_NAMES = /(female|mujer|helena|laura|elvira|m[oó]nica|paulina|marisol|sabina|luc[ií]a|conchita|pen[eé]lope|lupe|\bmia\b|esperanza|dalia|elena|ximena|paloma|salom[eé]|camila|valentina|isabel|francisca|catalina|renata|ver[oó]nica|abril|irene|teresa|triana|estrella|nora|beatriz|carmen|ana\b|sof[ií]a|google espa)/i;
+  const M_NAMES = /(\bmale\b|hombre|pablo|[aá]lvaro|jorge|\bjuan\b|diego|carlos|enrique|miguel|ra[uú]l|sergio|andr[eé]s|gonzalo|dar[ií]o|tom[aá]s|jos[eé]|alonso|lorenzo|alberto|federico|gerardo|liberto|rodrigo|arnau|dalmau|elias|gael|jaime|lucas|mateo|manuel|antonio)/i;
+  const vGender = v => { const n = v.name; if (/female|mujer/i.test(n)) return 'f'; if (/\bmale\b|hombre/i.test(n)) return 'm'; if (M_NAMES.test(n)) return 'm'; if (F_NAMES.test(n)) return 'f'; return ''; };
+  function voiceFor(g) {
+    if (!g) return null;
+    const want = ttsSet()[g === 'm' ? 'vm' : 'vf'];
+    const pref = VOICES.find(v => v.name === want);
+    if (pref) return pref;
+    const cand = VOICES.filter(v => vGender(v) === g);
+    const lang = VOICE ? VOICE.lang.slice(0, 5).toLowerCase() : 'es-es';
+    return cand.find(v => v.lang.toLowerCase().replace('_', '-') === lang) || cand.find(v => /^es[-_]ES/i.test(v.lang)) || cand[0] || null;
+  }
+  function utter(t, pitch, g) {
     const u = new SpeechSynthesisUtterance(String(t).replace(/<[^>]+>/g, '').replace(/[\[\]]/g, '').replace(/\|[^\]\s]*/g, ''));
-    u.lang = VOICE ? VOICE.lang : 'es-ES'; if (VOICE) u.voice = VOICE;
+    let v = VOICE;
+    if (g) {
+      const gv = voiceFor(g);
+      if (gv) { v = gv; pitch = 1; }
+      else { const base = VOICE ? vGender(VOICE) : ''; pitch = g === 'm' ? (base === 'm' ? 1 : 0.7) : (base === 'f' ? 1.05 : 1.3); }   // 해당 성별 음성이 없으면 높낮이로 구분
+    }
+    u.lang = v ? v.lang : 'es-ES'; if (v) u.voice = v;
     u.rate = ttsSet().rate || 0.9; u.pitch = pitch || 1; u.volume = 1;
     KEEP.push(u); if (KEEP.length > 40) KEEP.shift();
     return u;
@@ -83,12 +102,13 @@
       toast(VOICES.length ? '음성이 시작되지 않았어요. 한 번 더 눌러 보고, 계속 안 되면 소리 점검을 열어 주세요.' : '이 기기에 스페인어 음성이 없어 재생되지 않아요. 소리 점검에서 설치 방법을 확인하세요.', true);
     }, 3000);
   }
-  function speak(t, btn) { run([utter(t)], btn); }
+  function speak(t, btn, g) { run([utter(t, 1, g)], btn); }
+  const genderOf = who => { const p = (D.people || {})[who]; return p && (p.g === 'm' || p.g === 'f') ? p.g : ''; };
   function playLines(lines, btn) {
     const who = [...new Set(lines.map(l => l.who))];
-    run(lines.map(l => utter(l.es, who.indexOf(l.who) % 2 ? 1.2 : 0.9)), btn);
+    run(lines.map(l => { const g = l.g || genderOf(l.who); return g ? utter(l.es, 1, g) : utter(l.es, who.indexOf(l.who) % 2 ? 1.15 : 0.95); }), btn);
   }
-  document.addEventListener('click', e => { const b = e.target.closest('[data-say]'); if (b) { e.stopPropagation(); speak(b.dataset.say, b); } });
+  document.addEventListener('click', e => { const b = e.target.closest('[data-say]'); if (b) { e.stopPropagation(); speak(b.dataset.say, b, b.dataset.g || ''); } });
   Object.assign(SC, { speak, playLines });
 
   function toast(msg, withCheck) {
@@ -110,6 +130,9 @@
         <h2>🔊 소리 점검</h2>
         <div class="chk-status"></div>
         <div class="chk-row"><label>스페인어 음성</label><select class="vsel"></select></div>
+        <div class="chk-row"><label>👨 남자 역할 음성</label><select class="vm"></select></div>
+        <div class="chk-row"><label>👩 여자 역할 음성</label><select class="vf"></select></div>
+        <div class="chk-row"><button class="btn ghost sm tmf">▶ 남녀 목소리 들어 보기</button></div>
         <div class="chk-row"><label>말하기 속도 <b class="rv"></b></label><input class="rate" type="range" min="0.6" max="1.2" step="0.05"></div>
         <div class="chk-row"><button class="btn big ttest">▶ 테스트 재생: “${esc(test)}”</button></div>
         <div class="chk-res"></div>
@@ -125,6 +148,9 @@
       $('.mx', m).onclick = () => m.classList.remove('on');
       m.addEventListener('click', e => { if (e.target === m) m.classList.remove('on'); });
       $('.vsel', m).onchange = e => { ttsSet().voice = e.target.value; save(); pickVoice(); };
+      $('.vm', m).onchange = e => { ttsSet().vm = e.target.value; save(); };
+      $('.vf', m).onchange = e => { ttsSet().vf = e.target.value; save(); };
+      $('.tmf', m).onclick = e => run([utter('Hola, me llamo Juan.', 1, 'm'), utter('Hola, me llamo Cristina.', 1, 'f')], e.currentTarget);
       $('.rate', m).oninput = e => { ttsSet().rate = +e.target.value; $('.rv', m).textContent = '×' + (+e.target.value).toFixed(2); save(); };
       $('.ttest', m).onclick = () => {
         const res = $('.chk-res', m); res.className = 'chk-res wait'; res.textContent = '재생 요청 중…';
@@ -145,13 +171,19 @@
       const sl = $('.vsel', m);
       sl.innerHTML = VOICES.length ? VOICES.map(v => `<option value="${esc(v.name)}" ${VOICE && v.name === VOICE.name ? 'selected' : ''}>${esc(v.name)} (${v.lang})${v.localService ? '' : ' · 온라인'}</option>`).join('') : '<option>스페인어 음성 없음 — 기본 음성 사용</option>';
       sl.disabled = !VOICES.length;
+      ['m', 'f'].forEach(g => {
+        const box = $('.v' + g, m), cur = voiceFor(g);
+        const opts = VOICES.map(v => `<option value="${esc(v.name)}" ${cur && v.name === cur.name ? 'selected' : ''}>${esc(v.name)} (${v.lang})${vGender(v) === g ? ' ✔' : ''}</option>`).join('');
+        box.innerHTML = (cur ? '' : `<option value="">${g === 'm' ? '남자' : '여자'} 음성 없음 — 기본 음성 높낮이로 구분</option>`) + opts;
+        box.disabled = !VOICES.length;
+      });
       const r = ttsSet().rate || 0.9; $('.rate', m).value = r; $('.rv', m).textContent = '×' + r.toFixed(2);
     };
     pickVoice(); drawCheck();
     $('.chk-res', m).className = 'chk-res'; $('.chk-res', m).textContent = '';
     m.classList.add('on');
   }
-  const say = t => `<button class="say" data-say="${esc(String(t).replace(/<[^>]+>/g, ''))}" title="듣기" aria-label="듣기">🔊</button>`;
+  const say = (t, g) => `<button class="say" data-say="${esc(String(t).replace(/<[^>]+>/g, ''))}"${g ? ` data-g="${g}"` : ''} title="듣기" aria-label="듣기">🔊</button>`;
   SC.say = say;
 
   /* ---------- 채점 엔진 ---------- */
@@ -565,7 +597,7 @@
       const name = p.name || l.who;
       if (!sides[l.who]) sides[l.who] = p.side || (flip++ % 2 ? 'r' : 'l');
       const txt = esc(l.es).replace(/\[([^\]]+)\]/g, (m, a) => hl(a, ci++));
-      return `<div class="msg ${sides[l.who]}"><span class="av">${p.av || '🙂'}<small>${esc(name)}</small></span><div class="bub">${txt} ${say(l.es)}</div></div>`;
+      return `<div class="msg ${sides[l.who]}"><span class="av">${p.av || '🙂'}<small>${esc(name)}</small></span><div class="bub">${txt} ${say(l.es, l.g || p.g)}</div></div>`;
     }).join('')}</div>`;
   }
   const clozeFromDialog = ls => ls.map(l => `<p><b class="who">${esc((D.people && D.people[l.who] && D.people[l.who].name) || l.who)}:</b> ${l.es}</p>`).join('');

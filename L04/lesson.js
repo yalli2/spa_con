@@ -572,8 +572,8 @@
     skills: D.skills,
     sections: D.sections,
     people: {
-      Amigo: { av: '🧑🏼', side: 'l' }, Paula: { av: '👱🏼‍♀️', side: 'r' },
-      Juan: { av: '🧑🏻‍🦱', side: 'l' }, Cristina: { av: '👩🏼‍🦰', side: 'r' },
+      Amigo: { g: 'm', av: '🧑🏼', side: 'l' }, Paula: { g: 'f', av: '👱🏼‍♀️', side: 'r' },
+      Juan: { g: 'm', av: '🧑🏻‍🦱', side: 'l' }, Cristina: { g: 'f', av: '👩🏼‍🦰', side: 'r' },
       A: { av: '🙋🏻‍♂️', side: 'l' }, B: { av: '🙋🏽‍♀️', side: 'r' }
     },
     errLabels: { concordancia: '성·수 일치 (mi/mis, -o/-a)', pronombre: '지시사 · 대명사', conjugacion: '동사 변화 (tener · estar · ser)', estructura: '문장 구조' },
