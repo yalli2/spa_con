@@ -1,0 +1,84 @@
+/* Lección 07 · Mi barrio — 과별 추가 스타일 */
+.tr-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:14px 0}
+.tr-strip span{background:#fff;border:1px solid var(--line);border-radius:12px;text-align:center;padding:10px 4px;font-size:34px;display:flex;flex-direction:column;line-height:1.2}
+.tr-strip b{font-family:var(--serif);font-size:17px}.tr-strip small{font-size:11.5px;color:var(--mute)}
+.dg{font-variant-numeric:tabular-nums;font-family:var(--sans);letter-spacing:.02em}
+table.dt{border-collapse:collapse;margin:10px 0;background:#fff}
+table.dt.imp td:first-child{color:var(--mute);font-size:14px}
+table.dt.nums td.dg{font-weight:700;font-size:18px;text-align:right;color:var(--brown)}
+table.dt.tu{width:100%}table.dt.tu td.n{width:36px;color:var(--mute)}table.dt.tu td{font-family:var(--serif);font-size:18px}
+.vinf{display:inline-block;min-width:70px;color:var(--brown)}
+.dist{display:flex;align-items:flex-end;gap:0;margin:10px 0 4px;background:linear-gradient(transparent 70%,#e9e2cf 70%);border-radius:10px;padding:8px 10px}
+.dist span{font-size:15px;text-align:center}.dist .me{font-size:15px;width:70px}
+.dist .d1{width:90px}.dist .d2{width:150px}.dist .d3{flex:1;text-align:right}
+/* 대화 1 경로 */
+.route1{margin:10px 0}.route1 svg{width:100%;max-width:560px;display:block}
+/* 미니 지도 (Actividad 2) */
+svg.mini{width:64px;height:64px;border:1px solid #ccc;border-radius:6px;flex:none;background:#fff}
+.mini-in svg.mini{width:46px;height:46px;vertical-align:middle;margin-right:6px}
+.pmx .pm-it{min-height:96px}
+.pmx svg.mini{width:88px;height:88px}
+/* 격자 지도 (Actividad 4) */
+.gwrap{overflow-x:auto;margin:10px 0}
+svg.gmap{width:100%;min-width:620px;display:block}
+svg.gmap .gb{fill:#9fd35a}
+svg.gmap .gb.click{cursor:pointer}svg.gmap .gb.click:hover{fill:#ffe14d}
+svg.gmap .groute{fill:none;stroke-width:5;stroke-dasharray:9 6;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
+svg.gmap .here{font-size:13px;font-weight:700;fill:#e8281e;paint-order:stroke;stroke:#fff;stroke-width:3px}
+svg.gmap .gi{pointer-events:none}
+.a4tabs,.a5tabs,.a7tabs{flex-wrap:wrap}
+.tmk{margin-left:4px}
+.nbadge{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;color:#fff;font-size:12px}
+/* 산티아고 지하철 (Actividad 5) */
+.metro-wrap{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px;margin:10px 0}
+svg.metro{width:100%;min-width:720px;display:block}
+svg.metro .stl{font-size:12px;font-weight:700;fill:#333;font-family:'Noto Sans KR',sans-serif}
+svg.metro .stl.x{font-size:13px;font-weight:900;fill:#111}
+svg.metro .st{cursor:pointer}
+svg.metro .st .hit{fill:transparent}
+svg.metro .st .dot{fill:#fff;stroke:#333;stroke-width:2.5}
+svg.metro .st.xc .dot{stroke-width:3.5}
+svg.metro .st:hover .dot{fill:#ffe14d}svg.metro .st:hover .stl{fill:var(--red)}
+svg.metro .st.pk .dot{fill:#ffe14d;stroke:#d4a900;stroke-width:4}svg.metro .st.pk .stl{fill:#b07d00}
+svg.metro .st.ok .dot{fill:#2e9d5b;stroke:#1b6b3a}svg.metro .st.ok .stl{fill:#1b6b3a}
+svg.metro .st.no .dot{fill:#d6202f;stroke:#8a0f19}svg.metro .st.no .stl{fill:#d6202f;text-decoration:line-through}
+.a5q p{margin:6px 0}.a5t{font-family:var(--serif);font-size:18px}
+/* 도시 카드 (Actividad 6) */
+.city{display:block;font-size:44px;letter-spacing:-4px;padding:10px 14px;border-radius:12px}
+.city.ny{background:linear-gradient(#bfe3ff,#f3fbff)}.city.bcn{background:linear-gradient(#9fdcff,#ffe8b0)}.city.ldn{background:linear-gradient(#cfe0ee,#f2f2f2)}
+.qlist{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 16px;margin:12px 0;columns:2;column-gap:28px}
+.qlist p{margin:4px 0;font-family:var(--serif);font-size:17px;break-inside:avoid}
+/* 나침반 · 유럽 지도 (Actividad 7) */
+.cgrid3{display:grid;grid-template-columns:repeat(3,auto);justify-content:center;align-items:center;gap:8px 14px;margin:8px 0}
+.cgrid3 .cw{display:flex;flex-direction:column;align-items:center;gap:2px}.cgrid3 .cw small{color:var(--mute);font-size:12px}
+.cgrid3 .rose{display:grid;place-items:center}
+.eu-wrap,.la-wrap{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:16px;align-items:start;margin:10px 0}
+svg.eumap,svg.lamap{width:100%;max-width:520px;display:block;border-radius:14px;border:1px solid var(--line)}
+svg.eumap .gray,svg.lamap .gray{fill:#e4e4e4;stroke:#fff;stroke-width:.8}
+svg.eumap .land,svg.lamap .land{stroke:#fff;stroke-width:1;transition:filter .15s}
+svg.eumap .cty,svg.lamap .cty{cursor:pointer}
+svg.eumap .cty:hover .land,svg.lamap .cty:hover .land{filter:brightness(.92)}
+svg.eumap .cty.pk .land,svg.lamap .cty.pk .land{stroke:#d6202f;stroke-width:2.5}
+svg.eumap .cl{font-size:9.5px;font-weight:700;fill:#2b2420;pointer-events:none;opacity:0;paint-order:stroke;stroke:#fff;stroke-width:2.5px}
+svg.eumap .cty.named .cl{opacity:1}
+svg.lamap .cl{font-size:12px;font-weight:700;fill:#2b2420;pointer-events:none;paint-order:stroke;stroke:#fff;stroke-width:3px}
+svg.lamap .cap{fill:#d6202f;stroke:#fff;stroke-width:.8;pointer-events:none}
+.la-card h3{margin:0 0 6px}.la-card p{margin:6px 0}
+/* 숫자 카드 (Actividad 8) */
+.auds{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.aud{border:1.5px solid #c9b88f;background:#fff;border-radius:10px;padding:6px 12px;font-weight:700;display:flex;flex-direction:column;align-items:center;min-width:72px}
+.aud small{font-weight:500;font-size:12px;color:var(--brown)}
+.aud.on{background:var(--yellow);border-color:#d4a900}.aud.ok{border-color:var(--green);background:#eefaf2}.aud.no{border-color:var(--pen);background:#fff1f1}
+.aud.playing{box-shadow:0 0 0 3px rgba(242,106,33,.35)}
+.ncards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+.ncard{position:relative;background:#fffbe8;border:1.5px solid #c9b88f;border-radius:6px;padding:16px 8px;font-family:var(--serif);font-size:30px;font-weight:700;color:var(--ink)}
+.ncard:hover{border-color:var(--orange)}
+.ncard .nb2{position:absolute;right:6px;top:4px;width:24px;height:24px;border-radius:50%;background:var(--orange);color:#fff;font-family:var(--sans);font-size:13px;display:grid;place-items:center}
+.lima{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;background:#eaf6ee;border-radius:16px;padding:10px;margin:10px 0;font-size:30px}
+.lima b{font-size:15px;color:var(--brown);margin-left:10px}
+@media (max-width:760px){
+  .tr-strip{grid-template-columns:repeat(3,1fr)}
+  .eu-wrap,.la-wrap{grid-template-columns:1fr}
+  .ncards{grid-template-columns:repeat(2,1fr)}.ncard{font-size:24px}
+  .qlist{columns:1}
+}

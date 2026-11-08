@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스페인어 회화 I — 쓰기시험 대비 인터랙티브 학습 (Lección 1–12)</title>
+<meta name="description" content="스페인어 회화 I 교재 12과 전체를 위한 쓰기시험 대비 인터랙티브 학습 사이트">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Noto+Sans+KR:wght@400;500;700;900&family=Gaegu:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="common/style.css?v=1">
+</head>
+<body>
+<div class="hub-wrap">
+  <div class="hub-hero">
+    <span class="st">🇪🇸</span>
+    <h1>Conversación I</h1>
+    <p>스페인어 회화 I · 12과 쓰기시험 대비 인터랙티브 학습 — 과를 골라 시작하세요.</p>
+    <div class="hub-name"><label for="nm">👩‍🎓 이름 · Nombre</label><input id="nm" class="inp" placeholder="이름을 쓰세요"><span id="tot" class="small" style="color:#fbe7a1"></span></div>
+  </div>
+  <div class="card" style="margin-top:20px">
+    <h3>✍️ 이렇게 공부해요</h3>
+    <div class="legend">
+      <div>📘 각 과: 표지 → 어휘 → 문법 → 대화 1·2 → 활동 → 유용한 표현</div>
+      <div>🎯 <b>¡Compruébalo!</b> 쓰기 모의시험 (100점) + 빨간 펜 첨삭</div>
+      <div>📊 <b>Resultados</b> 성적표 · 영역별 레이더 · 자주 하는 실수</div>
+      <div>✍️ 채점 표식: <b style="color:#2e9d5b">○</b> 정답 · <b style="color:#e08a00">△</b> 악센트·부호 · <b style="color:#d6202f">✕</b> 오답</div>
+    </div>
+    <p class="small">기록은 이 기기의 브라우저에만 저장됩니다. 아래 카드의 막대는 과별 진도(푼 비율)입니다.</p>
+  </div>
+  <div id="grid" class="hub-grid"></div>
+</div>
+<footer class="foot">다인원격평생교육직업학원 · 후안샘 스페인어 · 스페인어 회화 I (Conversación I) 학습용</footer>
+<script>
+(function () {
+  const L = [
+    ['01', '¡Hola! ¿Cómo te llamas?', '👋🙋‍♀️', 'linear-gradient(135deg,#ffd27a,#f79a5b)', '인사 · 자기소개 · 알파벳 · 0~10'],
+    ['02', '¿De dónde eres?', '🌎🗣️', 'linear-gradient(135deg,#8fd3f4,#84fab0)', '나라 · 국적 · 언어 · 색깔 · 11~30'],
+    ['03', 'Trabajos y profesiones', '👩‍⚕️👨‍🍳', 'linear-gradient(135deg,#a1c4fd,#c2e9fb)', '직업 · 직장 · 외모·성격 · 31~100 · 서수'],
+    ['04', 'Esta es mi familia', '👨‍👩‍👧‍👦🌳', 'linear-gradient(135deg,#fbc2eb,#f6d365)', '가족 · 결혼 여부 · 나이 · 성격 · 101~9.000'],
+    ['05', '¿Cómo es tu casa?', '🏠🛋️', 'linear-gradient(135deg,#f6d365,#fda085)', '집 · 내 방 · 가구'],
+    ['06', '¿Dónde está la parada de autobús?', '🚏🛍️', 'linear-gradient(135deg,#84fab0,#8fd3f4)', '물건 · 공공장소 · 쇼핑 · 위치'],
+    ['07', 'Mi barrio', '🏙️🚇', 'linear-gradient(135deg,#cfd9df,#9fb8d6)', '동네 시설 · 위치 · 도시 · 10.000 이상의 수'],
+    ['08', '¿Qué haces normalmente por la tarde?', '⏰🪥', 'linear-gradient(135deg,#ffecd2,#fcb69f)', '시각 · 요일 · 하루 일과 · 집안일'],
+    ['09', 'Me gusta mucho viajar', '📖👒', 'linear-gradient(#2fb6e9,#6ad1f0 45%,#3ac9c6)', '여가 활동 · 취향 · gustar'],
+    ['10', '¿Qué te pasa?', '🤒💊', 'linear-gradient(135deg,#e0c3fc,#8ec5fc)', '몸 상태 · 신체 · 병과 처방 · 경험'],
+    ['11', '¿Cómo quedamos?', '📞🎬', 'linear-gradient(135deg,#fddb92,#d1fdff)', '공연 · 초대 · 약속 · 지난 일'],
+    ['12', 'Cuando era niño, nadábamos en el río', '🧒🏞️', 'linear-gradient(135deg,#96e6a1,#d4fc79)', '어린 시절 · 예전과 지금']
+  ];
+  let sum = {}; try { sum = JSON.parse(localStorage.getItem('spa_con_sum') || '{}'); } catch (e) { }
+  const nm = document.getElementById('nm');
+  try { nm.value = localStorage.getItem('spa_con_name') || ''; } catch (e) { }
+  nm.oninput = () => { try { localStorage.setItem('spa_con_name', nm.value); } catch (e) { } };
+  let dn = 0, nn = 0;
+  document.getElementById('grid').innerHTML = L.map(([n, t, e, bg, k]) => {
+    const s = sum['L' + n];
+    const pct = s && s.n ? Math.round(s.d / s.n * 100) : 0;
+    if (s) { dn += s.d; nn += s.n; }
+    return `<a class="lcard" href="L${n}/"><div class="lh" style="background:${bg}">${e}<div class="badge"><small>Lección</small>${n}</div></div>
+      <div class="lbody"><h2>${t}</h2><p>${k}</p>
+      <div class="lp"><div class="bar"><i style="width:${pct}%"></i></div><b>${pct}%</b>${s && s.e != null ? `<span title="최근 모의시험">🎯${s.e}</span>` : ''}</div></div></a>`;
+  }).join('');
+  if (nn) document.getElementById('tot').textContent = `· 지금까지 ${dn}문항을 풀었어요!`;
+})();
+</script>
+</body>
+</html>

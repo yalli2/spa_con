@@ -1,0 +1,73 @@
+/* Lección 12 전용 도표 스타일 */
+/* 활용표 */
+.cj{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;margin:8px 0}
+.cj th,.cj td{border:1px solid var(--line);padding:6px 10px;text-align:left}
+.cj th{background:#fbe7a1;font-size:14px}
+.cj td.pr{color:var(--mute);font-size:14px;white-space:nowrap}
+.cj b.en{color:var(--red)}
+.cj td.irr{background:#fff4f6}
+
+/* 시간축 (indefinido vs imperfecto) */
+.tline{width:100%;max-width:640px;display:block;margin:6px auto 10px}
+.tline text{font-family:var(--sans);font-size:13px;fill:var(--ink)}
+.tline .ax{stroke:var(--brown);stroke-width:2.5}
+.tline .wv{fill:none;stroke:var(--blue);stroke-width:4;stroke-linecap:round}
+.tline .pt{fill:var(--pen)}
+.tline .lb1{fill:var(--blue);font-weight:700}.tline .lb2{fill:var(--pen);font-weight:700}
+
+/* 빈도 막대 (Actividad 1) */
+.fq{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.fq-row{display:grid;grid-template-columns:210px 1fr 150px;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 12px}
+.fq-row .fqn{font-weight:600}.fq-row .fqn span{font-size:24px;margin-right:6px;vertical-align:middle}
+.fq-row .fqb{display:flex;flex-wrap:wrap;gap:4px}
+.fq-row .fqb button{border:1.5px solid #c9b88f;background:#fff;border-radius:16px;padding:3px 10px;font-size:13px}
+.fq-row .fqb button.on{background:var(--yellow);border-color:#d4a900;font-weight:700}
+.fq-row .fqbar{height:14px;border-radius:9px;background:#f1ead9;overflow:hidden}
+.fq-row .fqbar i{display:block;height:100%;background:linear-gradient(90deg,var(--orange),var(--yellow));transition:width .4s}
+@media (max-width:820px){.fq-row{grid-template-columns:1fr}}
+
+/* Antes / Ahora 그림 비교 (Actividad 7) */
+.aa{display:flex;flex-direction:column;gap:14px;margin:14px 0}
+.aa-row{display:grid;grid-template-columns:36px 1fr 1fr;gap:12px;align-items:stretch}
+.aa-row .n{font-weight:900;font-size:20px;color:var(--brown);align-self:center}
+.aa-c{position:relative;background:#fff;border:2px solid var(--line);border-radius:50% 50% 18px 18px/30% 30% 18px 18px;padding:30px 10px 12px;text-align:center;min-height:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.aa-c .tag{position:absolute;top:-2px;left:50%;transform:translateX(-50%);color:#fff;font-weight:700;font-size:13px;padding:2px 18px;border-radius:0 0 8px 8px}
+.aa-c.an .tag{background:#ef7b6b}.aa-c.ah .tag{background:#6aa7e0}
+.aa-c .art{font-size:46px;line-height:1.1;letter-spacing:.05em}
+.aa-c .art .thin{display:inline-block;transform:scale(.8,1);font-size:52px}
+.aa-c .art .fat{display:inline-block;transform:scale(1.35,1.15);font-size:62px}
+.aa-c .q{font-size:14px;color:var(--mute)}
+.aa-c.an{background:linear-gradient(#fff,#fff6ef)}.aa-c.ah{background:linear-gradient(#fff,#eef6ff)}
+.aa-c .noise{font-size:20px}
+@media (max-width:640px){.aa-row{grid-template-columns:1fr}.aa-row .n{justify-self:start}}
+
+/* 잉카의 집 (Actividad 6) */
+.inca{position:relative;max-width:720px;margin:12px auto;aspect-ratio:16/10;border-radius:50%;overflow:hidden;border:4px solid #6b4a3a;
+  background:linear-gradient(#5b3b2e 0 30%,#8a6a58 30% 72%,#b79567 72%)}
+.inca::before{content:'';position:absolute;inset:30% 0 28% 0;background:repeating-linear-gradient(0deg,transparent 0 22px,rgba(0,0,0,.15) 22px 24px),repeating-linear-gradient(90deg,transparent 0 46px,rgba(0,0,0,.08) 46px 48px)}
+.inca .door{position:absolute;left:61%;top:31%;width:15%;height:42%;background:linear-gradient(#a8d2e8 0 45%,#4e7c5a 45% 65%,#c9a46e 65%);border:4px solid #4a3328}
+.inca .hs{position:absolute;transform:translate(-50%,-50%);background:none;border:0;padding:0;font-size:46px;line-height:1;cursor:pointer;transition:transform .15s}
+.inca .hs:hover{transform:translate(-50%,-50%) scale(1.12)}
+.inca .hs svg{width:62px;height:62px;display:block}
+.inca .hs.on::after{content:'✕';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-8deg);font-family:var(--hand);color:var(--pen);font-size:64px;text-shadow:0 0 4px #fff}
+.inca .hs .hl{display:none;position:absolute;left:50%;top:100%;transform:translateX(-50%);white-space:nowrap;font-size:12px;background:#fff;border-radius:6px;padding:1px 6px;font-family:var(--sans)}
+.inca.graded .hs .hl{display:block}
+.inca .hs.ok .hl{background:#dff4e6;color:var(--green)}.inca .hs.no .hl{background:#fde2e4;color:var(--pen)}
+.inca .hs .mkbox{position:absolute;right:-18px;top:-14px}
+.inca .ppl{position:absolute;font-size:64px;left:44%;top:66%;transform:translate(-50%,-50%);pointer-events:none}
+
+/* Actividad 11 표 */
+.t11{width:100%;border-collapse:collapse;background:#fff;margin:8px 0}
+.t11 th,.t11 td{border:1px solid var(--line);padding:6px 8px;vertical-align:top}
+.t11 th{background:#fbe7a1;font-size:14px}
+.t11 td.tm{font-weight:700;white-space:nowrap}
+.t11 td.qq{width:30%}
+.t11 td.tu .item{margin:0;border:0;padding:0;background:none;box-shadow:none}
+.t11 td.tu .item-p{display:none}
+
+/* 프로필 카드 (Actividad 9) */
+.prof{display:flex;gap:14px;align-items:center;background:#fff;border:2px dashed var(--orange);border-radius:14px;padding:10px 16px;margin:10px 0}
+.prof .pa{font-size:48px}.prof ul{margin:0;padding-left:18px}
+
+/* 다중 이모지 그림 카드 */
+.mp12 .pic .emo{font-size:38px;letter-spacing:.04em}

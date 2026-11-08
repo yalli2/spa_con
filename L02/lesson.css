@@ -1,0 +1,93 @@
+/* Lección 02 · ¿De dónde eres? — 과별 스타일 */
+
+/* 읽기 상자 */
+.read-box{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:14px 18px;margin:12px 0}
+.read-box .rb-e{font-size:46px;line-height:1}
+.read-box .lead{margin:0;font-family:var(--serif);font-size:19px}
+
+/* 지도 */
+.mapgame{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;margin:10px 0}
+.map-wrap{border-radius:12px;overflow:hidden}
+.lmap{display:block;width:100%;height:auto;max-height:640px}
+.lmap .msea{fill:#d9eef8}
+.lmap .cty{fill:#efe8d6;stroke:#fff;stroke-width:.6;transition:fill .2s}
+.lmap.world .cty{stroke-width:.4}
+.lmap .cty.hi{fill:#f7d774;stroke:#c9a227;stroke-width:.7;cursor:pointer}
+.lmap .cty.also{fill:#f9edc4;cursor:pointer}
+.lmap .cty.hi:hover,.lmap .dot:hover{fill:var(--orange)}
+.lmap .dot{fill:#f7d774;stroke:#a87f00;stroke-width:1.2;cursor:pointer}
+.lmap .cty.ok,.lmap .dot.ok{fill:#5cc183}
+.lmap .cty.no,.lmap .dot.no{fill:#f08a8f}
+.lmap .cty.cur,.lmap .dot.cur{fill:var(--orange)}
+.lmap .blink{animation:mblink .35s 4 alternate}
+@keyframes mblink{from{fill:#f7d774}to{fill:var(--pen)}}
+.mapgame.exp .lmap .cty.ok,.mapgame.exp .lmap .cty.no{fill:#f7d774}
+.lmap .inset{fill:none;stroke:var(--brown2);stroke-width:1.5}
+.lmap .ins-t{font:700 13px var(--sans);fill:var(--brown2)}
+.lmap .sea-t{font:italic 13px var(--serif);fill:#5d8aa6}
+.lmap .legend-map text{font:12px var(--sans);fill:var(--ink)}
+.lmap .lg-hi{fill:#f7d774;stroke:#c9a227}.lmap .lg-also{fill:#f9edc4;stroke:#c9a227}
+.mq-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;min-height:40px;margin:4px 0 8px}
+.mq-n{background:var(--brown);color:#fff;border-radius:999px;padding:2px 12px;font-size:13px;font-weight:700}
+.mq-t{font-family:var(--serif);font-size:22px}
+.mq-res{min-height:34px;margin-top:8px;font-size:15px}
+.cinfo{display:inline-block;background:#fffbe8;border:1.5px solid #f5c400;border-radius:10px;padding:8px 14px;font-size:15px}
+.cinfo b{font-family:var(--serif);font-size:20px}
+.cinfo small{color:var(--mute)}
+
+/* 대륙 표 */
+table.cont{width:100%;border-collapse:collapse;margin:12px 0;background:#fff;table-layout:fixed}
+.cont th{background:#fbe7a1;border:1px solid #e9d48d;padding:8px;font-size:14px}
+.cont td{border:1px solid var(--line);vertical-align:top;text-align:center;padding:8px 4px;font-family:var(--serif);font-size:17px}
+.cont td span{display:block;line-height:1.7}
+
+/* 인물 카드 */
+.pc2{display:grid;grid-template-columns:1fr 1fr;gap:10px;font-family:var(--sans)}
+.pcard{background:#fff;border-radius:10px;padding:8px;text-align:center;font-size:14px}
+.pcard .av{display:block;font-size:34px;line-height:1.1}
+.pcard b{display:block}.pcard small{color:var(--mute)}
+
+/* Sopa de letras */
+.sopa-wrap{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start;margin:10px 0}
+.sopa{display:grid;grid-template-columns:repeat(11,40px);gap:0;border:2px solid #b9ab8c;background:#fffdf3;user-select:none}
+.sc{width:40px;height:40px;border:1px solid #d8ccb0;background:transparent;font-family:var(--serif);font-size:21px;font-weight:700;color:var(--ink);padding:0;transition:background .15s}
+.sc:hover{background:#fff4c4}
+.sc.st{background:var(--yellow);box-shadow:inset 0 0 0 3px var(--orange)}
+.sc.bad{background:#fde2e4}
+.sc.f0{background:#ffd58a}.sc.f1{background:#bfe3f7}.sc.f2{background:#c9efd5}.sc.f3{background:#f9c4d8}.sc.f4{background:#e3d4ff}
+.sc.rv{background:#fde2e4;color:var(--pen)}
+.sopa-side{flex:1;min-width:220px}
+.sopa-list{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.sw-w{background:#f7f2e6;border-radius:6px;padding:3px 10px;font-family:var(--serif);font-size:17px;letter-spacing:.04em}
+.sw-w.ok{background:#dff4e6;color:var(--green);font-weight:700}.sw-w.no{background:#fde2e4;color:var(--pen)}
+.sopa-sc{font-size:16px;margin-top:6px}
+
+/* 숫자 카드 (Actividad 9) */
+.cloze.numgrid .cz-body{line-height:1.4}
+.cloze.numgrid .nrow{display:grid;grid-template-columns:repeat(7,1fr);margin-bottom:10px;border:1.5px solid #c9b88f;border-radius:6px;max-width:760px}
+.cloze.numgrid .cz-body p{display:flex;flex-direction:column;align-items:center;border-right:1px solid #e3d6b8;padding:6px 2px 4px;background:#fff}
+.cloze.numgrid .cz-body p:last-child{border-right:0}
+.cloze.numgrid .nn{font-size:30px;font-weight:700;line-height:1.2}
+.cloze.numgrid .nw{font-family:var(--sans);font-size:13px;color:var(--mute);border-top:1px solid #e3d6b8;width:100%;text-align:center;padding-top:3px}
+.cloze.numgrid p.miss{background:#fffbe8;padding-bottom:18px}
+.cloze.numgrid .cz{font-size:15px;max-width:100%}
+.cloze.numgrid .nn .cz{font-size:22px;width:2.6em!important}
+.cloze.numgrid .czm{transform:translate(-50%,0)}
+.bignum{font-size:28px;font-family:var(--serif)}
+
+/* 색깔 견본 */
+.swatches{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.sw{display:flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px 10px 3px 4px;font-size:14px}
+.sw i{width:22px;height:22px;border-radius:50%;border:1px solid #bbb;display:inline-block}
+.sw b{font-family:var(--serif);font-size:17px}.sw small{color:var(--mute);font-size:11.5px}
+
+/* 개수 세기 (Actividad 10) */
+.c10{display:grid;grid-template-columns:auto 300px 1fr;gap:14px;align-items:center;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;margin:10px 0}
+.c10 .ch{font-weight:700;font-size:18px;color:var(--brown)}
+.cnt{display:grid;grid-template-columns:repeat(var(--per),30px);gap:2px}
+.cnt i{font-style:normal;font-size:24px;line-height:30px;width:30px;height:30px;text-align:center;border-radius:6px}
+.c10 .items{margin:0}
+.m10{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.m10 .cnt{grid-template-columns:repeat(6,30px)}
+.fam .emo{font-size:38px}
+@media (max-width:900px){.c10{grid-template-columns:1fr}.sopa{grid-template-columns:repeat(11,30px)}.sc{width:30px;height:30px;font-size:17px}.cloze.numgrid .nrow{grid-template-columns:repeat(4,1fr)}table.cont{font-size:13px}}

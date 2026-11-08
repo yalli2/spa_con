@@ -1,0 +1,116 @@
+/* Lección 08 — 과별 도표 스타일 */
+.hor-list{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 18px;font-family:var(--serif);font-size:17px}
+.hor-list ul{margin:4px 0;padding-left:20px}.hor-list li{margin:2px 0}
+
+/* 영업시간 타임라인 */
+.tline-wrap{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:10px 0}
+.tl-ctl{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px}
+.tl-ctl .clk{width:70px;height:70px}
+.tl-ctl .dclock{font-size:22px}
+.tl-t{font-family:var(--serif);font-size:19px;min-width:220px}
+.tl-rng{flex:1;min-width:200px;accent-color:var(--orange)}
+.tl-row{display:grid;grid-template-columns:230px 1fr 92px;align-items:center;gap:10px;padding:4px 0;border-bottom:1px dashed #f0e6d0}
+.tl-n{font-size:13px;line-height:1.2}.tl-n b{font-size:13.5px}.tl-n small{display:block;color:var(--mute)}
+.tl-track{position:relative;height:18px;background:#f4ede0;border-radius:9px}
+.tl-track i{position:absolute;top:0;bottom:0;background:linear-gradient(90deg,#7cc79a,var(--green));border-radius:9px}
+.tl-row.meal .tl-track i{background:linear-gradient(90deg,var(--yellow),var(--orange))}
+.tl-row.open .tl-n b{color:var(--green)}
+.tl-st{font-size:13px;font-weight:700}
+.tl-row.axis{border:0}.tl-track.ax{background:none;height:22px}
+.tl-track.ax span{position:absolute;top:2px;transform:translateX(-50%);font-size:11px;color:var(--mute)}
+.tl-now{position:absolute;top:-6px;bottom:-6px;width:2px;background:var(--pen);pointer-events:none}
+.tline{position:relative;overflow:hidden}
+
+/* 시계 */
+.clk-sm .clk{width:64px;height:64px;vertical-align:middle}
+.clkface-demo{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:10px 0}
+.clkface-demo .cd{background:#fff;border:1px solid var(--line);border-radius:12px;text-align:center;padding:8px 4px;font-size:13px}
+.clkface-demo .clk{width:72px;height:72px;display:block;margin:0 auto 4px}
+.setclk{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sc{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:10px;text-align:center}
+.sc-q{font-family:var(--serif);font-size:17px;font-weight:700;min-height:48px}
+.sc-face .clk{width:110px;height:110px}
+.sc-btn{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin:4px 0}
+.sc .dclock{font-size:16px;padding:2px 8px}
+.sc .item-row{justify-content:center}
+
+/* Actividad 1 */
+.a1-wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:16px;align-items:start}
+.a1r{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 10px;margin-bottom:8px}
+.a1t{font-family:var(--serif);font-size:18px;font-weight:700;flex:1 1 230px}
+.a1r .tg{display:flex;gap:3px}.a1r .tg button{width:30px;padding:3px 0}
+.a1-clocks{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.a1c{position:relative;background:#fff;border:2px solid var(--line);border-radius:14px;text-align:center;padding:6px}
+.a1c.on{border-color:var(--orange);background:#fff8ec}
+.a1c .lt{position:absolute;left:10px;top:6px;font-weight:900;color:var(--brown);font-size:18px}
+.a1c .clk{width:96px;height:96px}
+.a1c .who-l{display:block;font-size:12px;color:var(--orange);font-weight:700;min-height:16px}
+
+/* Actividad 2 빈도표 */
+.ftab-wrap{overflow-x:auto}
+table.ftab{width:100%;border-collapse:collapse;background:#fff;margin:10px 0}
+.ftab th,.ftab td{border:1px solid #c9bda5;padding:6px 8px;font-size:14px}
+.ftab tr:first-child th{background:#fbe7a1;text-align:center;font-weight:500}
+.ftab th{background:#fff6d6;text-align:left;font-weight:500;width:230px}
+.ftab td{text-align:center;cursor:pointer;height:38px;width:11%}
+.ftab td:hover{background:#fff8d6}
+.ftab .circ{font-size:24px;color:var(--pen);font-weight:900;line-height:1}
+
+/* 타임라인 카드 (cloze tlc) */
+.cloze.tlc .cz-body{display:flex;gap:10px;flex-wrap:wrap}
+.cloze.tlc .tc{flex:1 1 150px;background:#fff;border:1.5px solid var(--line);border-top:5px solid var(--orange);border-radius:12px;padding:8px;text-align:center}
+.cloze.tlc .tc .clk{width:70px;height:70px;display:block;margin:0 auto}
+.cloze.tlc .tc .dclock{font-size:16px;padding:2px 8px}
+.cloze.tlc .tc p{margin:6px 0 0;font-family:var(--serif);font-size:17px}
+
+/* Actividad 4 시간표 */
+.cloze.schc .cz-body{overflow-x:auto}
+table.sched{width:100%;border-collapse:collapse;background:#fff;box-shadow:6px 6px 0 #c79a5d;border:2px solid #c79a5d;font-size:14px}
+.sched th,.sched td{border:1px solid #b9ab92;padding:6px 6px;text-align:center}
+.sched tr:first-child th{background:#fbe7a1}
+.sched th{background:#fffbe8;font-weight:700}
+.sched td.gray{background:#c9c9c9}
+.sched td.rec{background:#fdf3d9;letter-spacing:.2em}
+.sched td.bl{background:#fff3e8}.sched td.bl small{display:block;color:var(--orange);font-weight:700}
+.sched td.bl .cz{width:100%!important;min-width:0;font-size:14px}
+.sched td.bl .blank{display:block}
+.sched td.bl .czfix{font-size:12px;line-height:1.2;display:block}
+table.sched{table-layout:fixed}
+.sched th:first-child{width:56px}
+.script{background:#fff;border:1px dashed var(--line);border-radius:10px;padding:8px 14px;font-family:var(--serif);font-size:17px}
+
+/* Actividad 5 */
+#sec-a5 .pic .emo{font-size:40px}
+.pair5{display:inline-flex;gap:8px;align-items:center;font-size:30px;vertical-align:middle}
+.pair5 span{background:#fff8ec;border-radius:12px;padding:2px 10px}.pair5 b{font-size:18px;color:var(--mute)}
+
+/* Actividad 6 약국 안내판 */
+.a6-wrap{display:grid;grid-template-columns:260px 1fr;gap:18px;align-items:start}
+.farm{background:#2f4f3a;color:#f5f1e6;border:12px solid #c99a5b;border-radius:6px;padding:16px 18px;font-family:var(--hand);font-size:20px;box-shadow:0 4px 10px rgba(0,0,0,.15)}
+.farm b{display:block;font-size:26px;margin-bottom:6px}.farm p{margin:4px 0}
+#sec-a6 .clk-sm .clk{width:54px;height:54px}
+#sec-a6 .dclock{font-size:18px;padding:2px 8px}
+
+/* Actividad 8 */
+.prof{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.prof .pc{display:flex;flex-direction:column;align-items:center}
+.prof .pc span{font-size:34px}
+table.a8t .fsel{width:100%;padding:6px;border:1.5px solid var(--line);border-radius:8px;font-size:14px;background:#fff}
+
+/* Actividad 9 */
+#sec-a9 .pic .emo{font-size:44px}
+
+/* 요일 cloze */
+.cloze.days .cz-body p{font-family:var(--serif);font-size:18px}
+
+/* 모의시험 노트 카드 */
+.note-card{background:#fff;border-radius:6px;box-shadow:4px 6px 12px rgba(0,0,0,.12);padding:14px 26px;max-width:460px;margin:8px auto;font-size:16px;transform:rotate(-1deg)}
+.note-card p{margin:6px 0}
+
+@media (max-width:900px){
+  .a1-wrap,.a6-wrap{grid-template-columns:1fr}
+  .setclk{grid-template-columns:repeat(2,1fr)}
+  .clkface-demo{grid-template-columns:repeat(3,1fr)}
+  .prof{grid-template-columns:repeat(3,1fr)}
+  .tl-row{grid-template-columns:120px 1fr 70px}
+}

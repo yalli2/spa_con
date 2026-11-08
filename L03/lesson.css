@@ -1,0 +1,76 @@
+/* Lección 03 · Trabajos y profesiones — 과별 추가 스타일 */
+
+/* 인물 그림 (Actividad 5 · 7) */
+.figs{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-end;gap:10px;margin:14px 0;padding:14px 10px 6px;background:#fff;border:1.5px solid var(--line);border-radius:14px}
+.fig{display:flex;flex-direction:column;align-items:center;width:118px}
+.fig svg{width:104px;height:auto;display:block}
+.fig b{font-size:14.5px;margin-top:2px}
+.fig small{color:var(--mute);font-size:12px;text-align:center;line-height:1.3}
+.desc-row{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:start;border-top:1px dashed var(--line);padding-top:10px;margin-top:10px}
+.desc-row .fig{width:auto}
+@media (max-width:700px){.desc-row{grid-template-columns:1fr}}
+
+/* 사람 → 일터 (Actividad 1) */
+.worker{display:flex;align-items:center;gap:8px}
+.worker .emo-big{font-size:34px;line-height:1}
+
+/* 문장 만들기 기계 (Actividad 2) */
+.mach{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+.mach .mcol{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:6px}
+.mach .mcol b{font-size:13px;color:var(--mute);text-align:center}
+.mach .wchip.on{background:var(--yellow);border-color:#d4a900;font-weight:700}
+.mach-out{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:18px;font-family:var(--serif);font-weight:700;background:#fffbe6;border:2px dashed #e3c75a;border-radius:10px;padding:8px 14px;min-height:46px}
+.found{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.found span{background:#e6f5ec;border:1.5px solid var(--green);border-radius:20px;padding:3px 12px;font-size:14px}
+.mach-meter{height:12px;border-radius:9px;background:#eee;overflow:hidden;margin:6px 0}
+.mach-meter i{display:block;height:100%;background:linear-gradient(90deg,var(--yellow),var(--green));transition:width .4s}
+
+/* 명함 (Actividad 12) */
+.bcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin:12px 0}
+.bcard{background:#fff;border:1px solid #bbb;box-shadow:3px 4px 0 rgba(0,0,0,.08);padding:16px 18px;display:grid;grid-template-columns:96px 1fr;gap:12px;font-size:13px;line-height:1.55;border-radius:4px}
+.bcard .logo{text-align:center;font-size:11.5px;color:#555;line-height:1.3}
+.bcard .logo .lg-ic{font-size:40px;display:block;line-height:1.1;margin-bottom:4px}
+.bcard .logo .sm-ic{display:inline-flex;gap:2px;margin-bottom:4px}
+.bcard .logo .sm-ic i{display:inline-block;width:30px;height:30px;border-radius:3px;font-style:normal;color:#fff;font-weight:900;line-height:30px;font-size:20px}
+.bcard .nm{font-family:var(--serif);font-size:20px;font-weight:700;line-height:1.2}
+.bcard .job{font-weight:700;font-size:12.5px;margin-bottom:8px}
+.bcard .ln b{font-weight:700}
+.abbr{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.abbr .ybox{margin:0}
+.abbr .ybox p{margin:2px 0}
+
+/* 빙고 (Actividad 10) */
+.bingo-wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start}
+.bingo{display:grid;grid-template-columns:repeat(4,70px);gap:6px;padding:10px;background:#fffbe6;border:2px solid #e3c75a;border-radius:12px}
+.bingo .bc{width:70px;height:56px;border:1.5px solid #d9c27a;border-radius:8px;background:#fff;font-size:22px;font-weight:700;text-align:center;font-family:var(--sans);color:var(--ink);position:relative}
+.bingo input.bc{padding:0}
+.bingo button.bc.on{background:var(--yellow);text-decoration:line-through;text-decoration-thickness:3px;text-decoration-color:var(--pen)}
+.bingo button.bc.no{background:#fde2e2;border-color:var(--pen)}
+.bingo button.bc.miss{box-shadow:inset 0 0 0 3px var(--orange)}
+.bingo-side{flex:1;min-width:240px}
+.bingo-side .called{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0;font-size:13px}
+.bingo-side .called span{background:#fff;border:1px solid var(--line);border-radius:6px;padding:1px 7px}
+.bingo-big{font-size:38px;font-weight:900;color:var(--red);font-family:var(--hand);min-height:50px}
+
+/* 숫자표 (Actividad 9) */
+.numtab{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:10px 0}
+.numtab div{background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:6px 10px;display:flex;align-items:center;gap:8px}
+.numtab div b{font-size:22px;color:var(--red);min-width:42px}
+
+/* 계산 카드 (Actividad 11) */
+.calc{display:inline-flex;align-items:center;gap:6px;background:#2f4a3a;color:#fff;font-family:'Courier New',monospace;font-size:20px;font-weight:700;padding:4px 14px;border-radius:8px;border:3px solid #8a6a3b;margin-right:6px}
+.opbox{display:inline-grid;grid-template-columns:auto auto;gap:2px 14px;background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:8px 16px;font-size:15px}
+
+/* 개인 정보 카드 (Ficha) */
+table.ficha{width:100%;border-collapse:collapse;background:#fff;margin:10px 0}
+table.ficha th{background:#f4ede0;font-weight:500;font-size:12.5px;letter-spacing:.04em;border:1px solid #c9bfae;padding:5px}
+table.ficha td{border:1px solid #c9bfae;padding:3px}
+table.ficha input{width:100%;border:0;background:transparent;font-size:15px;padding:6px;font-family:var(--sans)}
+table.ficha input:focus{outline:2px solid var(--yellow)}
+
+/* 활용표 */
+table.conj{width:100%;border-collapse:collapse;background:#fff;margin:10px 0;font-size:15px}
+table.conj th,table.conj td{border:1px solid var(--line);padding:6px 8px;text-align:center}
+table.conj th{background:#fbe7a1}
+table.conj td:first-child{text-align:left;color:var(--mute);font-size:13.5px}
+table.conj td.irr{background:#fff1f1}

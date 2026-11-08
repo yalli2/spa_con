@@ -1,0 +1,113 @@
+/* Lección 10 · ¿Qué te pasa? — 과별 추가 스타일 */
+.items.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.items.three>*{min-width:0}
+.minibox .item-row{flex-wrap:wrap}
+.minibox .inp{min-width:0;flex:1 1 120px;width:auto}
+.duo{font-size:44px;letter-spacing:.04em}
+.script{background:#fff;border:1px dashed var(--line);border-radius:10px;padding:8px 16px;margin:8px 0 14px;font-family:var(--serif);font-size:18px}
+.script p{margin:4px 0}
+
+/* ---- 몸 그림 SVG ---- */
+.bodysvg{display:block}
+.bodysvg .sk{fill:#f8d9b4;stroke:#7a4a2e;stroke-width:2.5}
+.bodysvg .armo{stroke:#7a4a2e;stroke-width:29;stroke-linecap:round;fill:none}
+.bodysvg .arm{stroke:#f8d9b4;stroke-width:24;stroke-linecap:round;fill:none}
+.bodysvg .shirt{fill:#fff;stroke:#7a4a2e;stroke-width:2.5;stroke-linejoin:round}
+.bodysvg .shorts{fill:#fff;stroke:#7a4a2e;stroke-width:2.5;stroke-linejoin:round}
+.bodysvg .hair{fill:#4a3326;stroke:#2e1f16;stroke-width:2}
+.bodysvg .eye{fill:#2b2420}
+.bodysvg .ln{fill:none;stroke:#7a4a2e;stroke-width:2.5;stroke-linecap:round}
+.bodysvg .hit{fill:rgba(0,0,0,0)}
+.bodysvg .lead{fill:none;stroke:var(--blue);stroke-width:2}
+.bodysvg .ldot{fill:var(--blue)}
+@keyframes ache{0%,100%{opacity:1}50%{opacity:.55}}
+.bodysvg .pt.hot .sk{fill:#ff8f80;stroke:#c62828}
+.bodysvg .pt.hot .arm{stroke:#ff8f80}
+.bodysvg .pt.hot .armo{stroke:#c62828}
+.bodysvg .pt.hot .hit{fill:rgba(230,50,40,.5);stroke:#c62828;stroke-width:2}
+.bodysvg .pt.hot{animation:ache 1.2s ease-in-out infinite}
+.bodysvg.tap .pt{cursor:pointer}
+.bodysvg.tap .pt:hover .sk{fill:#ffe9a8}
+.bodysvg.tap .pt:hover .arm{stroke:#ffe9a8}
+.bodysvg.tap .pt:hover .hit{fill:rgba(255,225,77,.55)}
+.bodysvg .pt.okp .sk{fill:#9fe0b2}.bodysvg .pt.okp .arm{stroke:#9fe0b2}.bodysvg .pt.okp .hit{fill:rgba(46,157,91,.55)}
+.bodysvg .pt.nop .sk{fill:#ff8f80}.bodysvg .pt.nop .arm{stroke:#ff8f80}.bodysvg .pt.nop .hit{fill:rgba(214,32,47,.5)}
+
+/* 라벨 붙인 큰 그림 (Actividad 2) */
+.bodywrap{position:relative;width:100%;max-width:820px;aspect-ratio:800/640;margin:6px auto 0;background:#fff;border:1px solid var(--line);border-radius:16px}
+.bodywrap .bodysvg{position:absolute;inset:0;width:100%;height:100%}
+.blab{position:absolute;transform:translateY(-50%);display:flex;align-items:center;gap:3px;width:29.5%;font-size:14px;flex-wrap:nowrap}
+.blab.r{left:69.8%}
+.blab.l{right:69.8%;flex-direction:row}
+.blab b{color:var(--blue);white-space:nowrap}
+.blab .bi{flex:1;min-width:0;width:100%;border:0;border-bottom:2px solid var(--brown2);background:transparent;font:inherit;font-size:15px;padding:2px 4px;outline:none}
+.blab .bi:focus{background:#fffbe0}
+.blab .bi.ok{border-color:var(--green);color:var(--green);font-weight:700}
+.blab .bi.half{border-color:#e5b800}
+.blab .bi.no{border-color:var(--pen);color:var(--pen)}
+.blab .say{flex:none;font-size:13px;padding:0 3px}
+.blab .bm{position:absolute;top:100%;left:16px;font-size:12px;white-space:nowrap;line-height:1.1}
+.blab .bm .mk{font-size:15px}
+.blab .bm small{color:var(--pen);margin-left:3px}
+
+/* 누르기 게임 */
+.tapgame{display:grid;grid-template-columns:1fr 1.4fr;gap:16px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px}
+.tap-fig .bodysvg{width:100%;max-height:380px}
+.tap-q{text-align:center}
+.tap-w{font-family:var(--serif);font-size:38px;font-weight:700;color:var(--red);margin:6px 0}
+.tap-end{font-size:22px}
+
+/* Actividad 3 */
+.a3-grid{display:grid;grid-template-columns:1fr 210px;gap:18px;align-items:start}
+.a3-fig{position:sticky;top:90px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:8px}
+.a3-fig .bodysvg{width:100%;height:auto;max-height:340px}
+.minibox{background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px;display:flex;flex-direction:column;align-items:center}
+.minibox .bodysvg.mini{height:170px;width:auto}
+.minibox .item{width:100%;margin:6px 0 0}
+
+/* ---- sopa de letras ---- */
+.ws-wrap{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start}
+.ws{position:relative;background:#fff;border:2px solid #8a7c70;padding:6px;border-radius:4px}
+.ws-svg{position:absolute;left:6px;top:6px;pointer-events:none}
+.ws-svg line{stroke-width:34;stroke-linecap:round;opacity:.32}
+.ws-svg line.miss{opacity:.45;stroke-dasharray:4 6}
+.ws-svg circle.st{fill:none;stroke:var(--orange);stroke-width:3}
+.ws-grid{position:relative;display:grid}
+.wsc{width:46px;height:46px;border:0;background:transparent;font-size:19px;font-weight:500;color:#3d3530;border-radius:50%}
+.wsc:hover{background:rgba(255,225,77,.45)}
+.wsc.st{background:rgba(242,106,33,.25)}
+.ws-side{flex:1;min-width:220px}
+.ws-list{padding-left:22px;margin:4px 0 10px}
+.ws-list li{margin:4px 0;font-size:16px}
+.ws-list li.ok b{letter-spacing:.08em}
+.dotc{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.ws-msg{min-height:1.4em}
+
+/* Actividad 6 · 경험 카드 */
+.exp6{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin:12px 0}
+.exp6 .ph{font-size:17px;margin-bottom:4px}
+.exp6 .tg{margin:6px 0}
+.exp6 .item{margin:6px 0}
+
+/* Actividad 8 */
+.sc8{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:10px 0}
+.sc8 .ccard .emo{font-size:40px;letter-spacing:.05em}
+
+/* Actividad 10 · 수첩 + 포스트잇 */
+.nb10{display:flex;gap:18px;align-items:center;flex-wrap:wrap;background:#fff;border:2px solid #d9a24a;border-left:14px dotted #c9b9a6;border-radius:6px;padding:16px 22px;margin:12px 0}
+.nb-page{flex:1;min-width:260px;font-family:var(--serif);font-size:19px}
+.nb-page p{margin:4px 0}
+.nb-page .ck{display:inline-block;width:18px;color:var(--pen);font-family:var(--sans)}
+.stickies{display:flex;flex-direction:column;gap:14px}
+.sticky{width:170px;padding:22px 10px;background:#fdf6a3;box-shadow:2px 3px 6px rgba(0,0,0,.18);font-family:var(--hand);font-size:24px;text-align:center}
+.sticky.y1{transform:rotate(-3deg)}.sticky.y2{transform:rotate(4deg)}
+
+@media (max-width:900px){
+  .items.three{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .a3-grid,.tapgame{grid-template-columns:1fr}
+  .a3-fig{position:static;max-width:220px;margin:auto}
+  .blab{font-size:11px}.blab .bi{font-size:12px}.blab .say{display:none}
+  .wsc{font-size:15px}
+  .ws-svg line{stroke-width:26}
+  .sc8{grid-template-columns:1fr}
+}

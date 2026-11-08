@@ -1,0 +1,78 @@
+/* Lección 11 · ¿Cómo quedamos? — 과별 스타일 */
+
+/* 영업시간 안내판 */
+.hor-wrap{display:grid;grid-template-columns:300px 1fr;gap:18px;align-items:start;margin:10px 0}
+.horario{background:#e3262b;color:#fff;border-radius:14px;padding:14px 16px;border:5px solid #fff;box-shadow:0 0 0 2px #e3262b,0 4px 12px rgba(0,0,0,.15);font-family:Arial,sans-serif;font-weight:700;text-align:center}
+.hz-t{font-size:30px;letter-spacing:.06em;border-bottom:2px solid #fff;margin-bottom:6px}
+.hz-d{font-size:15px;margin-bottom:6px}
+.hz-r{display:flex;gap:4px;justify-content:center;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.hz-r span,.hz-s span{display:inline-block;background:#fff;color:#222;border-radius:4px;padding:2px 6px;min-width:44px;min-height:20px;font-size:14px}
+.hz-s{display:flex;align-items:center;gap:6px;font-size:12px;margin:4px 0}.hz-s b{width:80px;text-align:left}
+@media (max-width:720px){.hor-wrap{grid-template-columns:1fr}}
+
+/* 문법 */
+.qpb{gap:16px;margin:10px 0}.qpb .bt{display:block;margin-bottom:4px;color:var(--brown)}
+table.inv3 td{vertical-align:top;line-height:1.7}table.inv3 th[colspan]{font-weight:500;background:#fff6dc;text-align:left}
+table.pret td,table.pret th{text-align:center}table.pret td:first-child{font-size:13px;color:var(--mute);text-align:left}
+.tline{display:flex;margin:14px 0 18px;padding:18px 6px 0;position:relative;overflow-x:auto}
+.tline:before{content:'';position:absolute;left:10px;right:10px;top:24px;height:4px;background:linear-gradient(90deg,#d9ccb0,var(--orange));border-radius:2px}
+.tl-it{flex:1;min-width:84px;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;font-size:13px}
+.tl-it i{width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--orange);margin-bottom:6px;z-index:1}
+.tl-it b{color:var(--brown)}.tl-it small{color:var(--mute)}
+.tl-it.now i{background:var(--red);border-color:var(--red);width:18px;height:18px;margin-top:-2px}.tl-it.now b{color:var(--red)}
+
+/* 초대 쪽지 */
+.postits{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:12px 0}
+.pcol{display:flex;flex-direction:column;gap:14px}
+.postit{padding:14px 16px;font-size:14.5px;line-height:1.55;box-shadow:2px 4px 8px rgba(0,0,0,.12);border-radius:2px 2px 18px 2px;font-family:var(--serif);font-size:17px}
+.postit b{font-family:var(--sans);font-size:14px;margin-right:4px}
+.postit.c0{background:#bfe27a;transform:rotate(-1deg)}.postit.c1{background:#f6b5d3;transform:rotate(.8deg)}.postit.c2{background:#d7c4f0;transform:rotate(-.6deg)}
+.postit.r0{background:#fff36b;transform:rotate(.9deg)}.postit.r1{background:#9fe0f5;transform:rotate(-.8deg)}.postit.r2{background:#fbc6a4;transform:rotate(.5deg)}
+@media (max-width:720px){.postits{grid-template-columns:1fr}}
+
+/* 대화 순서 맞추기 */
+.ord-bank{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+.tok.ln{text-align:left;width:100%;font-size:14.5px}.tok.ln.used{opacity:.35}
+.ord-line{background:#fff;border:1px dashed #d9ccb0;border-radius:12px;padding:10px;min-height:48px;display:flex;flex-direction:column;gap:6px}
+.ol{padding:6px 10px;border-radius:10px;font-size:14.5px;max-width:85%}
+.ol span{display:inline-block;width:22px;height:22px;border-radius:50%;text-align:center;font-weight:700;color:#fff;margin-right:6px;font-size:12px;line-height:22px}
+.ol.a{background:#e3f3fa;align-self:flex-start}.ol.a span{background:var(--blue)}
+.ol.b{background:#fde3c8;align-self:flex-end}.ol.b span{background:var(--orange)}
+
+/* 그림 장면 카드 + 쓰기 */
+.scenes{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:14px 0}
+.scene{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px 12px}
+.sc-pic{position:relative;display:flex;align-items:center;justify-content:center;gap:12px;background:linear-gradient(180deg,#f3fbff,#fdf8ec);border-radius:50% 50% 14px 14px/30% 30% 14px 14px;padding:14px 10px 10px;min-height:90px}
+.sc-pic .num{position:absolute;left:10px;top:6px;font-weight:700}
+.sc-pic .emo{font-size:44px;line-height:1;letter-spacing:2px}
+.sc-pic small{position:absolute;right:10px;bottom:6px;font-size:12px;color:var(--mute);background:#fff;border-radius:6px;padding:1px 6px}
+.scene .item{margin:8px 0 0;border:0;padding:0;background:none;box-shadow:none}
+.olga .dclock{font-size:20px;padding:4px 10px}
+@media (max-width:720px){.scenes{grid-template-columns:1fr}}
+
+/* 마르셀라의 다이어리 */
+.agenda-wrap{position:relative;display:flex;margin:16px 0 8px;background:#3a3a3a;border-radius:18px 12px 12px 18px;padding:14px 14px 14px 0;box-shadow:0 6px 16px rgba(0,0,0,.18)}
+.rings{width:40px;display:flex;flex-direction:column;justify-content:space-around;align-items:center;padding:6px 0}
+.rings i{display:block;width:30px;height:12px;border-radius:6px;background:linear-gradient(180deg,#eee,#9a9a9a);box-shadow:0 1px 2px rgba(0,0,0,.5)}
+.agenda{flex:1;background:#fff;border-radius:6px;padding:14px;overflow-x:auto;background-image:repeating-linear-gradient(180deg,transparent 0 27px,#eef3f8 27px 28px)}
+table.ag{width:100%;border-collapse:collapse;min-width:620px;table-layout:fixed}
+table.ag th,table.ag td{border:1px solid #9c9c9c;text-align:center;vertical-align:middle;padding:6px 4px;height:72px}
+table.ag tr:first-child th{height:auto;font-family:var(--serif);font-style:italic;font-size:19px;font-weight:500}
+table.ag th.pt{font-family:var(--hand);font-size:17px;font-weight:700;width:76px;color:#333}
+table.ag td.given span{font-family:var(--hand);font-size:18px;color:#1b3a8a;line-height:1.1}
+table.ag td.lock{cursor:pointer;background:#f6f1e4;font-size:20px;color:#b8a98a}
+table.ag td.lock small{display:block;font-size:13px}
+table.ag td.lock:hover{background:#ffe9b5}
+table.ag td.open{background:#fffbe6}
+table.ag .agi{width:100%;border:0;border-bottom:2px dashed #d9ccb0;background:transparent;font-family:var(--hand);font-size:17px;color:#a32638;text-align:center;outline:none}
+table.ag td.ok{background:#e7f7ec}table.ag td.no{background:#fde8ea}
+.agm{display:block;font-size:12px}.agm small{color:var(--pen);display:block}
+.askw{background:#fff;border:1px solid var(--line);border-radius:12px;padding:4px 8px 8px}
+.askw .item{border:0;box-shadow:none;margin:0}
+.reply .rb{display:inline-block;background:#e3f3fa;border-radius:12px 12px 12px 2px;padding:6px 12px;font-size:14.5px;margin:2px 0 0 6px}
+
+/* 마르타의 여행 사진 */
+.peru{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:12px 0}
+.pc8{position:relative;background:linear-gradient(180deg,#d9f0ff,#fff6dc);border-radius:14px;border:1px solid var(--line);padding:16px 8px 10px;text-align:center;display:flex;flex-direction:column;gap:4px}
+.pc8 .num{position:absolute;left:8px;top:4px;font-weight:700}.pc8 .emo{font-size:46px}.pc8 small{color:var(--brown);font-weight:500}
+@media (max-width:720px){.peru{grid-template-columns:repeat(2,1fr)}}

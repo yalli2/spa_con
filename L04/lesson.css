@@ -1,0 +1,68 @@
+/* Lección 04 — 가족 나무 · 지폐 · 숫자 카드 */
+.ft-scroll{overflow-x:auto;margin:10px 0;border:2px solid #e8dcc0;border-radius:16px;background:linear-gradient(#fffdf6,#fff7e3)}
+.ftree{position:relative;min-width:860px;margin:14px 10px 6px}
+.ft-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.ft-svg line{stroke:#a07a4a;stroke-width:2.2;stroke-linecap:round}
+.ft-svg line.cp{stroke:#e0a800;stroke-width:3}
+.ft-ring{position:absolute;transform:translate(-50%,-50%);font-size:17px;background:#fff7d6;border-radius:50%;padding:1px 2px;line-height:1;z-index:2}
+.fn{position:absolute;transform:translateX(-50%);width:108px;display:flex;flex-direction:column;align-items:center;text-align:center;z-index:1}
+.fav{position:relative;display:flex;align-items:center;justify-content:center;width:52px;height:52px;font-size:34px;line-height:1;background:#fff;border:2px solid #d9c49b;border-radius:50%;cursor:pointer;box-shadow:0 2px 0 rgba(0,0,0,.06)}
+.fav:hover{border-color:var(--orange)}
+.fav i{position:absolute;right:-6px;bottom:-4px;font-size:18px;font-style:normal}
+.fnm{font-family:var(--sans);font-size:12px;font-weight:500;line-height:1.25;margin-top:4px;color:#4a3a28;background:rgba(255,253,246,.9);border-radius:4px;padding:0 2px}
+.fyo{margin-top:4px;font-size:13px;background:var(--orange);color:#fff;border-radius:10px;padding:1px 10px;letter-spacing:.05em}
+.fn.me .fav{border-color:var(--orange);box-shadow:0 0 0 3px rgba(242,106,33,.25)}
+.fbl{display:flex;flex-direction:column;align-items:center;margin-top:3px;width:100%}
+.fbl .cz.ft{width:100px;font-size:14px;padding:1px 2px}
+.fmk{font-size:13px;line-height:1.1;min-height:2px}
+.fmk small{display:block;font-family:var(--hand);font-size:14px;color:var(--pen)}
+.fmk .mk{font-size:15px}
+.fnin{margin-top:3px;width:96px;font:inherit;font-size:12px;border:1px dashed #c9b88f;border-radius:6px;padding:1px 4px;text-align:center;background:#fff}
+.ftw .wordbank span{display:inline-block;margin:2px 6px;font-weight:500}
+.fscore{font-size:15px}
+
+/* 사진 프레임 (Diálogo 1) */
+.photo{margin:12px auto;max-width:520px;background:#fff;border:8px solid #c9a24a;border-radius:6px;box-shadow:0 3px 10px rgba(0,0,0,.12);padding:8px 10px;text-align:center}
+.ph-t{font-size:13px;color:var(--mute)}
+.ph-row{display:flex;justify-content:center;gap:10px;font-size:38px;margin-top:4px}
+.ph-row span{display:flex;flex-direction:column;align-items:center}
+.ph-row small{font-size:11px;line-height:1.2;color:#555}
+.ph-row .mid{transform:translateY(-6px)}
+
+/* 지폐 */
+.bills{display:flex;flex-wrap:wrap;gap:4px 0;padding:10px 6px 4px;align-items:center}
+.bill{display:inline-flex;align-items:flex-end;justify-content:space-between;width:96px;height:52px;margin-right:-26px;border-radius:5px;border:1px solid rgba(0,0,0,.25);padding:3px 6px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.45);box-shadow:1px 2px 4px rgba(0,0,0,.18);transform:rotate(var(--r));background-image:linear-gradient(135deg,rgba(255,255,255,.35),rgba(255,255,255,0) 55%)!important}
+.bill b{font-size:19px;font-weight:900;font-family:var(--sans)}
+.bill small{font-size:13px;font-weight:700}
+.billq .item-p{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.billq .bills{padding-right:30px}
+
+/* 숫자 카드 */
+.cloze.numgrid .cz-body{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;line-height:1.6}
+.cloze.numgrid .cz-body p{background:#fffbe8;border:1.5px solid #e8d7a8;border-radius:10px;padding:8px 8px 18px;text-align:center}
+.nbig{display:block;font-family:var(--serif);font-size:30px;color:var(--orange);margin-right:6px}
+.cloze.numgrid .cz{max-width:100%;font-size:15px}
+.bignum{font-family:var(--serif);font-size:22px;color:var(--orange)}
+
+/* 동사 활용표 3개 나란히 */
+.vt3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.cloze.table2.mini .cz-body p>span:first-child{width:110px;font-size:13px}
+.cloze.table2.mini .cz-body{font-size:17px}
+
+/* 인물 카드 */
+.card5{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.pcard{display:flex;gap:12px;align-items:center;background:#fff;border:2px solid #e8dcc0;border-radius:14px;padding:10px 14px}
+.pc-e{font-size:48px}
+.pcard dl{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;margin:0;font-size:14px}
+.pcard dt{color:var(--mute)}.pcard dd{margin:0;font-weight:500}
+
+/* Actividad 9 */
+.dl9{border:1.5px solid #e8dcc0;border-radius:12px;padding:8px 12px;margin:10px 0;background:#fff}
+.dl9h{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.dl9 .scr{font-size:14px;color:#555;margin-left:6px}
+
+@media (max-width:700px){
+  .vt3,.card5{grid-template-columns:1fr}
+  .cloze.numgrid .cz-body{grid-template-columns:repeat(2,1fr)}
+}
+.cloze.table2.mini .cz-body p{padding-bottom:14px}
